@@ -25,7 +25,6 @@ void loop() {
   
   if (digitalRead(D5)==LOW) {             // Read the toggle switch value, if low then run 0-90 sweep.
     digitalWrite(led, LOW);               // Turn LED off.
-    
     for (pos = 0; pos <= 90; pos += 1) {  // Goes from 0 degrees to 90 degrees in steps of 1 degree
       myservo.write(pos);                 // Tell servo to go to position in variable 'pos'
       if (digitalRead(D5)!=LOW) {         // If statement to check if we changed the switch and break out of loop.
@@ -39,7 +38,6 @@ void loop() {
       if (digitalRead(D5)!=LOW) {         // If statement to check if we changed the switch and break out of loop.
        break;
       }
-      
       delay(150);                         // Delay 150ms to set speed of sweep.
     }
   }
